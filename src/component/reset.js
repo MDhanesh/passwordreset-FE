@@ -22,7 +22,7 @@ function Reset() {
       window.alert("Passwords does not match");
     } else {
       const response = await axios.post(
-        `http://localhost:4000/register/resetpassword/${id}/${token}`,
+        `https://password-reset-n10p.onrender.com/register/resetpassword/${id}/${token}`,
         {
           id: id,
           token: token,

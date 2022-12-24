@@ -7,9 +7,12 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 export default function Forgot() {
   const [email, setUsername] = useState("");
   const handleSubmit = async (e) => {
-    const response = await axios.post("http://localhost:4000/register/forgot", {
-      email: email,
-    });
+    const response = await axios.post(
+      "https://password-reset-n10p.onrender.com/register/forgot",
+      {
+        email: email,
+      }
+    );
     console.log(response);
     if (response) {
       if (response.data.message === "Email sent successfully") {
