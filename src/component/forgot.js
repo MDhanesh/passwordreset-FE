@@ -7,22 +7,17 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 export default function Forgot() {
   const [email, setUsername] = useState("");
   const handleSubmit = async (e) => {
-    {
-      const response = await axios.post(
-        "http://localhost:4000/register/forgot",
-        {
-          email: email,
-        }
-      );
-      console.log(response);
-      if (response) {
-        if (response.data.message == "Email sent successfully") {
-          window.alert(
-            "success!! Password reset link has been sent to your mail"
-          );
-        } else {
-          window.alert("Please enter valid and registered email ID");
-        }
+    const response = await axios.post("http://localhost:4000/register/forgot", {
+      email: email,
+    });
+    console.log(response);
+    if (response) {
+      if (response.data.message === "Email sent successfully") {
+        window.alert(
+          "success!! Password reset link has been sent to your mail"
+        );
+      } else {
+        window.alert("Please enter valid and registered email ID");
       }
     }
   };

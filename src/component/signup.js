@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const navigate = useNavigate();
-  const [userData, setUserData] = useState([]);
+  // const [userData, setUserData] = useState([]);
   const [signIn, setSignIn] = useState(false);
   const SignInHandleClick = (e) => {
     e.preventDefault();
@@ -72,7 +72,7 @@ export default function Login() {
           });
           navigate("/");
         }
-        if (response.status == 200) {
+        if (response.status === 200) {
           alert(" Account Created sucessfully");
         }
       } catch (error) {
