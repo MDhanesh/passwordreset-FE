@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Forgot from "./component/forgot";
 import Reset from "./component/reset";
 import Login from "./component/signup";
+import Home from "./component/Dashboard";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />} />
-          {/* <Route path="/signup" element={<SignupComponent />} /> */}
+          <Route path="/home" element={<Home />} />
           <Route path="/forgot" element={<Forgot />} />
           <Route path="/reset/:id/:token" element={<Reset />} />
         </Routes>
